@@ -1,7 +1,9 @@
 import ProgramsCard from "../Components/ProgramsCard";
-
+import { useInView } from 'react-intersection-observer';
 import ContactSection from "../Components/ContactSection";
 import Footer from "../Components/Footer";
+import FeatureProgram from "../Components/FeatureProgram.jsx"
+import OurHistory from "../Components/Ourhistory.jsx";
 
 function Home() {
   const programs = [
@@ -55,114 +57,12 @@ function Home() {
           </div>
         </div>
       </div>
-
-      <div>
-        <h2 className="text-center font-extrabold text-5xl mt-10">
-          Our History
-        </h2>
-        <div className="flex px-32 my-12 justify-between items-start gap-6">
-          <img
-            src="img/classroom.jpg"
-            alt="img"
-            className="w-[450px] rounded-xl border-white shadow-md"
-          />
-          <div>
-            <h2 className="text-2xl font-bold mb-2">Heavenly demon</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.quis nostrud exercitation ullamco laboris nisi
-              ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </p>
-          </div>
-        </div>
-
-        {/* History Section */}
-
-        <div className="flex px-32 my-12 justify-between items-start gap-6">
-          <div>
-            <h2 className="text-2xl font-bold mb-2">Heavenly demon</h2>
-            <p className="">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.quis nostrud exercitation ullamco laboris nisi
-              ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </p>
-          </div>
-          <img
-            src="img/student.jpg"
-            alt="img"
-            className="w-[450px] rounded-xl border-white shadow-md"
-          />
-        </div>
-        <div className="flex px-32 my-12 justify-between items-start gap-6">
-          <img
-            src="img/herobg.jpg"
-            alt="img"
-            className="w-[450px] rounded-xl border-white shadow-md"
-          />
-          <div>
-            <h2 className="text-2xl font-bold mb-2">Heavenly demon</h2>
-            <p className="">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.quis nostrud exercitation ullamco laboris nisi
-              ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </p>
-          </div>
-        </div>
-        <div className="flex px-32 my-12 justify-between items-start gap-6">
-          <div>
-            <h2 className="text-2xl font-bold mb-2">Heavenly demon</h2>
-            <p className="">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.quis nostrud exercitation ullamco laboris nisi
-              ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </p>
-          </div>
-          <img
-            src="img/kru.jpg"
-            alt="img"
-            className="w-[450px] rounded-xl border-white shadow-md"
-          />
-        </div>
-      </div>
+      
+      {/* HistorySection */}
+      <OurHistory/>
 
       {/* Programs Section */}
-      <div className="divider my-10 font-extrabold text-5xl">
-        Featured Programs
-      </div>
-      <div className="flex flex-wrap justify-center gap-4">
-        {programs.map((program, index) => (
-          <ProgramsCard
-            key={index}
-            image={program.image}
-            title={program.title}
-            description={program.description}
-          />
-        ))}
-      </div>
+      <FeatureProgram programs={programs} />
 
       {/* Why Choose Us Section */}
       <div className="flex flex-col w-full items-center justify-center my-10">
